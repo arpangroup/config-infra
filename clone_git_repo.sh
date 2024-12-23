@@ -9,6 +9,7 @@ FILE_PATH="${var.file_path}"                            # Pass the FILE_PATH fro
 
 
 # Clone the repository and checkout the specific branch
+echo "Calling: git clone --branch $BRANCH_NAME --single-branch $REPO_URL $LOCAL_DIR" > $HOME/setup.log
 git clone --branch $BRANCH_NAME --single-branch $REPO_URL $FILE_PATH
 
 # Check if cloning was successful
