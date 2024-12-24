@@ -56,5 +56,22 @@ echo "==========================================================================
 curl -sSL ${SCRIPT_BASE_URL}/install_cloudwatch_agent.sh | bash >> $LOG_FILE 2>&1
 
 
-echo "EC2 setup completed." >> $LOG_FILE
+# Download and execute the install_logrotate.sh script
+#echo "================================================================================"
+#echo "Installing Logrotate..." >> $LOG_FILE
+#echo "Downloading script from ${SCRIPT_BASE_URL}/install_logrotate.sh..." >> $LOG_FILE
+#echo "================================================================================"
+#curl -sSL ${SCRIPT_BASE_URL}/install_logrotate.sh | bash >> $LOG_FILE 2>&1
+
+
+
+{
+echo "################################################################################"
+echo "################################################################################"
+echo "###                                                                          ###"
+echo "###            ✅✅✅ EC2 Setup Completed Successfully ✅✅✅              ###"
+echo "###                                                                          ###"
+echo "################################################################################"
+echo "################################################################################"
+} >> $LOG_FILE
 
