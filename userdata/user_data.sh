@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e  # Exit immediately on error
 
+# Variables
+LOG_FILE="/var/log/setup.log"
+
 # Set the HOME environment variable explicitly
 export HOME=/home/ec2-user
 
@@ -27,4 +30,4 @@ curl -O ${var.s3_bucket_url}/execute_app.sh
 chmod +x execute_app.sh
 ./execute_app.sh
 
-echo "EC2 setup completed." >> /home/ec2-user/setup.log
+echo "EC2 setup completed." >> $LOG_FILE

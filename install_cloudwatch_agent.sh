@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Variables
+LOG_FILE="/var/log/setup.log"
+APPLICATION_LOG_FILE="/var/log/api.log"
+
 # Update the system
 sudo yum update -y
 
@@ -32,7 +36,7 @@ cat <<CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/bin/config.json
             "timezone": "UTC"
           },
           {
-            "file_path": "/home/ec2-user/api.log",
+            "file_path": "${APPLICATION_LOG_FILE}",
             "log_group_name": "spring-app-logs",
             "log_stream_name": "{instance_id}-api-log",
             "timestamp_format": "%Y-%m-%dT%H:%M:%S.%fZ",

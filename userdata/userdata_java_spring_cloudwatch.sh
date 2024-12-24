@@ -5,7 +5,7 @@ set -e  # Exit immediately on error
 export HOME=/home/ec2-user
 
 # Variables
-LOG_FILE="$HOME/setup.log"
+LOG_FILE="/var/log/setup.log"
 RAW_URL="https://raw.githubusercontent.com/arpangroup/config-infra"   # https://raw.githubusercontent.com/arpangroup/config-infra/branch_scripts/install_java.sh
 BRANCH_NAME="branch_scripts"               # Replace with your desired branch name
 #GITHUB_REPO_URL=${var.github_repo_url}
