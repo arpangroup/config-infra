@@ -12,9 +12,9 @@ sudo yum install -y amazon-cloudwatch-agent
 # Logs Collection: Specifies log files to monitor
 cat <<CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/bin/config.json
 {
-#  "agent": {
-#    "run_as_user": "root"
-#  },
+  "agent": {
+    "run_as_user": "root"
+  },
   "logs": {
     "logs_collected": {
       "files": {
