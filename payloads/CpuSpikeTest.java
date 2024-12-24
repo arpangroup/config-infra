@@ -1,6 +1,13 @@
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+
+/**
+ * Core Detection: The program detects the number of available CPU cores using Runtime.getRuntime().availableProcessors().
+ * Target CPU Usage: You define the desired CPU usage (e.g., 80%).
+ * Thread Workload: The program spawns threads performing a busy computation (Math.sqrt(Math.random())) to consume CPU.
+ * Duration: The simulation runs for 30 seconds and then shuts down.
+ */
 public class CpuSpikeTest {
 
     public static void main(String[] args) {
