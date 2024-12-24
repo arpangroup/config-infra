@@ -12,9 +12,9 @@ sudo yum install -y amazon-cloudwatch-agent
 # Logs Collection: Specifies log files to monitor
 cat <<CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/bin/config.json
 {
-  "agent": {
-    "run_as_user": "root"
-  },
+#  "agent": {
+#    "run_as_user": "root"
+#  },
   "logs": {
     "logs_collected": {
       "files": {
@@ -29,6 +29,13 @@ cat <<CWAGENTCONFIG > /opt/aws/amazon-cloudwatch-agent/bin/config.json
             "file_path": "/var/log/cloud-init.log",
             "log_group_name": "ec2-cloud-init-logs",
             "log_stream_name": "{instance_id}/cloud-init.log",
+            "timezone": "UTC"
+          },
+          {
+            "file_path": "/home/ec2-user/api.log",
+            "log_group_name": "spring-app-logs",
+            "log_stream_name": "{instance_id}-api-log",
+            "timestamp_format": "%Y-%m-%dT%H:%M:%S.%fZ",
             "timezone": "UTC"
           }
         ]
